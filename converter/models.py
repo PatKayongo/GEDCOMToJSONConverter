@@ -6,8 +6,16 @@ from django.db import models
 class Person:
 	name = None
 	dateOfBirth = None
+	sourceID = None
+	isFemale = None
+	parentRelationships = []
+	marriages = []
 	def __init__(self, name):
 		self.name = name
+
+class MarriageStatus(Enum):
+	Married = 1
+	Divorced = 2
 
 class Marriage:
 	marriageDate = None
